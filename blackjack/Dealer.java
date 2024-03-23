@@ -12,8 +12,10 @@ public class Dealer {
         cardSum += sumScore(card[1]);
         count++;
         System.out.println("Dealer : Card" + count + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
+
         if (Card.whatCardNum(card[1]).equals("A")) {
             Rule.Insurance(players);
+
         }
     }
 
@@ -24,26 +26,40 @@ public class Dealer {
         count++;
         System.out.println("Dealer : Card2 : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
         Thread.sleep(3000);
+
         if (card[1] >= 10) {
+
             for (int i = 0; i < players; i++) {
+
                 if (playerInsurance[i]) {
+
                     System.out.print("Player" + (i + 1));
+
                     if (i < (players - 1)) {
                         System.out.print(", ");
+
                     }
                 }
             }
             System.out.println(" successes insurance");
+
         } else {
+
             for (int i = 0; i < players; i++) {
+
                 if (playerInsurance[i]) {
+
                     System.out.print("Player" + (i + 1));
+
                     if (i < (players - 1)) {
+
                         System.out.print(", ");
+
                     }
                 }
             }
             System.out.println(" failed insurance");
+
         }
     }
 
@@ -51,6 +67,7 @@ public class Dealer {
     static int drawDealer(int players) throws InterruptedException {
         System.out.println("Dealer : all player ended");
         Thread.sleep(2000);
+
         while (cardSum < 17) {
             int[] card = Card.draw();
             cards[count] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
@@ -58,10 +75,14 @@ public class Dealer {
             count++;
             System.out.println("Dealer Card" + (count + 1) + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
             Thread.sleep(2000);
+
         }
         System.out.println("Dealer Score : " + cardSum);
         return cardSum;
+
     }
+
+    //점수 더하기
     private static int sumScore(int card) {
         switch (card) {
             case 1 -> {

@@ -7,22 +7,30 @@ public class Card {
 
     static void shuffle() {
         for (int i = 0; i < 3; i++) {
+
             for (int j = 0; j < 12; j++) {
                 card[i][j] = 1;
+
             }
+
         }
+
     }
 
     static String whatCard(int a) {
+
         return switch (a) {
             case 0 -> "Diamond";
             case 1 -> "Clover";
             case 2 -> "Heart";
             default -> "Spade";
+
         };
+
     }
 
     static String whatCardNum(int a) {
+
         return switch (a) {
             case 0 -> "A";
             case 1 -> "2";
@@ -37,21 +45,27 @@ public class Card {
             case 10 -> "K";
             case 11 -> "Q";
             default -> "J";
+
         };
+
     }
 
     static String completedCard(String a, String b) {
         return a + " " + b;
+
     }
 
     static int[] draw() {
         Random random = new Random();
+
         while (true) {
             int randCard = random.nextInt(4);
             int randCardNum = random.nextInt(12);
+
             if (card[randCard][randCardNum] == 1) {
                 card[randCard][randCardNum] = 0;
                 return new int[]{randCard, randCardNum};
+
             }
 
         }
@@ -60,6 +74,7 @@ public class Card {
     }
 
     static int sumScore(int players, int card) {
+
         switch (card) {
             case 1 -> {
                 return 2;
@@ -90,8 +105,10 @@ public class Card {
             default -> {
                 if (Player.cardSum[players] > 10) {
                     return 1;
+
                 } else {
                     return 11;
+
                 }
             }
         }
@@ -104,17 +121,23 @@ public class Card {
 
     static void showCard(int players) {
         System.out.println();
+
         for (int i = 0; i < players; i++) {
             System.out.print("Player" + (i + 1) + " : ");
+
             for (int j = 0; j < Player.count[i]; j++) {
                 System.out.print(Player.card[i][j]);
+
                 if (j < (Player.count[i]) - 1) {
                     System.out.print(", ");
+
                 }
             }
             System.out.println();
+
         }
         System.out.println();
+        
     }
 
 }
