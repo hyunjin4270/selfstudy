@@ -34,6 +34,9 @@ public class BlackJackMain {
                                 } else if (choice.equals("end")) {
                                     int dealer = Dealer.drawDealer(players);
                                     Rule.whoIsWinner(players, dealer);
+                                    for (int j = 0; j < players; j++) {
+                                        System.out.println(Player.cardSum[j]);
+                                    }
                                     System.exit(0);
                                 } else {
                                     System.out.println("Dealer : Wrong answer");
@@ -50,6 +53,7 @@ public class BlackJackMain {
             } else if (setting == 2) {
                 Rule.showRules();
             } else if (setting == 3) {
+                System.out.println("Dealer : Good bye");
                 Rule.exit();
             } else {
                 System.out.println("Dealer : Wrong answer");

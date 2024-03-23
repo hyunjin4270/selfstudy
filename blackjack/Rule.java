@@ -85,7 +85,7 @@ public class Rule {
         Player.cardSum[a] += Card.sumScore(a, card[1]);
         Player.count[a]++;
         Thread.sleep(2000);
-        System.out.println("Player" + (a + 1) + " : Card" + Player.count[a] + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
+        System.out.println("Player" + (a + 1) + " Card" + Player.count[a] + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
         System.out.println();
     }
 
@@ -106,6 +106,7 @@ public class Rule {
                 answer[i] = scanner.nextLine();
                 if (answer[i].equals("yes")) {
                     playerInsurance[i] = true;
+                    count++;
                 } else if (answer[i].equals("no")) {
                     playerInsurance[i] = false;
                 } else {
@@ -120,13 +121,12 @@ public class Rule {
         //플레이어 인슈어런스 응답전달
         Thread.sleep(1000);
         System.out.print("Dealer : ");
-        for (int i = 0; i <= count; i++) {
+        for (int i = 0; i < players; i++) {
             if (playerInsurance[i]) {
                 System.out.print("Player" + (i + 1));
                 if (i < (count - 1)) {
                     System.out.print(", ");
                 }
-                count += 1;
             }
 
         }
@@ -176,5 +176,9 @@ public class Rule {
             }
         }
         System.out.println("Dealer : Player" + (finalWinner + 1) + " is winner");
+        for (int i = 0; i < players; i++) {
+            System.out.println(winner[i]);
+            
+        }
     }
 }

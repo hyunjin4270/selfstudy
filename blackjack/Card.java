@@ -91,7 +91,7 @@ public class Card {
                 if (Player.cardSum[players] > 10) {
                     return 1;
                 } else {
-                    return 10;
+                    return 11;
                 }
             }
         }

@@ -1,8 +1,10 @@
 package blackjack;
 
-public class Test {
-    public static void main(String[] args) throws InterruptedException {
-        int players = 2;
-        Rule.Insurance(players);
+public class test {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 20;
+        a -= b;
+        System.out.println(Math.abs(a));
     }
 }

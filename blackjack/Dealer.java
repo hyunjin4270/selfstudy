@@ -59,7 +59,7 @@ public class Dealer {
             System.out.println("Dealer Card" + (count + 1) + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
             Thread.sleep(2000);
         }
-        System.out.println("Dealer : Score : " + cardSum);
+        System.out.println("Dealer Score : " + cardSum);
         return cardSum;
     }
     private static int sumScore(int card) {
