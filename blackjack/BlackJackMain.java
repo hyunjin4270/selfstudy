@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class BlackJackMain {
     public static void main(String[] args) throws InterruptedException {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         int players;
 
@@ -42,11 +43,6 @@ public class BlackJackMain {
 
                                 } else if (choice.equals("end")) {
                                     Rule.whoIsWinner(players);
-
-                                    for (int j = 0; j < players; j++) {
-                                        System.out.println(Player.cardSum[j]);
-
-                                    }
                                     System.exit(0);
 
                                 } else {

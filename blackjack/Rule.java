@@ -8,6 +8,7 @@ public class Rule {
 
     //초기화면
     static int start() {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         System.out.println("==================================");
         System.out.println("1.start     2.rules         3.exit");
@@ -17,6 +18,7 @@ public class Rule {
 
     //1. 게임 시작
     static int gameStart() throws InterruptedException {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         Card.shuffle();
 
@@ -103,6 +105,7 @@ public class Rule {
 
     //인슈어런스
     static void Insurance(int players) throws InterruptedException {
+        @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         Boolean system = true;
         Boolean[] playerInsurance = new Boolean[players];
@@ -177,7 +180,6 @@ public class Rule {
 
     //블랙잭
     static void BlackJack(int players) {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Dealer : Player" + (players + 1) + " made BlackJack");
         System.exit(0);
 
@@ -202,6 +204,9 @@ public class Rule {
             Thread.sleep(1000);
             System.out.println("Dealer : all players win");
         
+        } else if (bestPlayer == Dealer.cardSum) {
+            System.out.println("Dealer : Dealer and the player tied the game");
+
         } else {
             System.out.print("Dealer : ");
 
@@ -219,6 +224,7 @@ public class Rule {
 
             }
             System.out.println(" win dealer");
+
         }
         Thread.sleep(2000);
 
