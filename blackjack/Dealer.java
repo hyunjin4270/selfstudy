@@ -68,10 +68,7 @@ public class Dealer {
     }
 
     //딜러 드로우
-    static int drawDealer(int players) throws InterruptedException {
-        System.out.println("Dealer : all player ended");
-        Thread.sleep(2000);
-
+    static void drawDealer(int players) throws InterruptedException {
         while (cardSum < 17) {
             int[] card = Card.draw();
             cards[count] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
@@ -82,7 +79,6 @@ public class Dealer {
 
         }
         System.out.println("Dealer Score : " + cardSum);
-        return cardSum;
 
     }
 

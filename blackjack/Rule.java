@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Rule {
+    private static int bestPlayer = 0;
+
     //초기화면
     static int start() {
         Scanner scanner = new Scanner(System.in);
@@ -30,7 +32,7 @@ public class Rule {
                 Player.count = new int[playerNum];
                 Arrays.fill(Player.bust, true);
                 System.out.println("Player : " + playerNum + ", Start");
-                Thread.sleep(3000);
+                Thread.sleep(2000);
 
                 for (int i = 0; i < playerNum; i++) {
 
@@ -45,6 +47,7 @@ public class Rule {
                         Thread.sleep(1000);
 
                     }
+                    detectTie(i);
                     if (Player.cardSum[i] == 21) {
                         Thread.sleep(2000);
                         BlackJack(i);
@@ -90,6 +93,7 @@ public class Rule {
         int[] card = Card.draw();
         Player.card[a][Player.count[a]] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
         Player.cardSum[a] += Card.sumScore(a, card[1]);
+        detectTie(a);
         Player.count[a]++;
         Thread.sleep(1000);
         System.out.println("Player" + (a + 1) + " Card" + Player.count[a] + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
@@ -180,13 +184,14 @@ public class Rule {
     }
 
     //우승자 가려내기
-    static void whoIsWinner(int players, int dealer) throws InterruptedException {
+    static void whoIsWinner(int players) throws InterruptedException {
         Boolean[] winner = new Boolean[players];
         Arrays.fill(winner, false);
         System.out.println("Dealer : all player ended");
         Thread.sleep(2000);
         Dealer.drawDealer(players);
-        
+        Thread.sleep(2000);
+
         if (Dealer.cardSum > 21) {
             Dealer.bust = true;
         
@@ -198,7 +203,7 @@ public class Rule {
             System.out.println("Dealer : all players win");
         
         } else {
-            System.out.println("Dealer : ");
+            System.out.print("Dealer : ");
 
             for (int i = 0; i < players; i++) {
                 
@@ -214,6 +219,23 @@ public class Rule {
 
             }
             System.out.println(" win dealer");
+        }
+        Thread.sleep(2000);
+
+        for (int i = 0; i < players; i++) {
+            System.out.println("Player" + (i + 1) + "Score : ");
+            if (!Player.bust[i]) {
+                System.out.println(Player.cardSum[i]);
+            } else {
+                System.out.println("Busted");
+            }            
+        }
+    }
+
+    //무승부 감지
+    private static void detectTie(int player) {
+        if (bestPlayer < Player.cardSum[player]) {
+            bestPlayer = Player.cardSum[player];
         }
     }
 }

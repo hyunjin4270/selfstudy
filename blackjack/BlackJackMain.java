@@ -31,7 +31,8 @@ public class BlackJackMain {
                                 if (choice.equals("hit")) {
                                     Rule.draw(i);
                                     Rule.isOver(i);
-                                } else if (choice.equals("stand")) {
+        
+                             } else if (choice.equals("stand")) {
                                     System.out.println("Dealer : Player" + (i + 1) + " choose stand.");
                                     System.out.println();
 
@@ -40,8 +41,7 @@ public class BlackJackMain {
                                     system = true;
 
                                 } else if (choice.equals("end")) {
-                                    int dealer = Dealer.drawDealer(players);
-                                    Rule.whoIsWinner(players, dealer);
+                                    Rule.whoIsWinner(players);
 
                                     for (int j = 0; j < players; j++) {
                                         System.out.println(Player.cardSum[j]);
