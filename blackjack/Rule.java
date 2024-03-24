@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Rule {
     private static int bestPlayer = 0;
+    private static int blackjack = 0;
 
     //초기화면
     static int start() {
@@ -204,7 +205,11 @@ public class Rule {
         if (Dealer.bust) {
             System.out.println("Dealer : Dealer busted");
             Thread.sleep(1000);
-            System.out.println("Dealer : all players win");
+            for (int i = 0; i < players; i++) {
+                if (Player.bust[i]) {
+                    System.out.println("Player" + (i + 1));
+                }
+            }
         
         } else if (bestPlayer == Dealer.cardSum) {
             System.out.println("Dealer : Dealer and the player tied the game");
@@ -232,9 +237,10 @@ public class Rule {
 
         }
         Thread.sleep(2000);
-
+        System.out.println();
+        
         for (int i = 0; i < players; i++) {
-            System.out.print("Player" + (i + 1) + "Score : ");
+            System.out.print("Player" + (i + 1) + " Score : ");
             if (Player.bust[i]) {
                 System.out.println(Player.cardSum[i]);
             } else {
