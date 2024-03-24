@@ -91,10 +91,10 @@ public class Rule {
         Player.card[a][Player.count[a]] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
         Player.cardSum[a] += Card.sumScore(a, card[1]);
         Player.count[a]++;
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         System.out.println("Player" + (a + 1) + " Card" + Player.count[a] + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
         System.out.println();
-        
+
     }
 
     //인슈어런스
@@ -165,6 +165,7 @@ public class Rule {
         if (Player.cardSum[player] > 21) {
             System.out.println("Dealer : Player" + (player + 1) + " is over 21.");
             Player.bust[player] = false;
+            Player.cardSum[player] = 0;
             Player.bustPlayer++;
 
         }
@@ -180,36 +181,39 @@ public class Rule {
 
     //우승자 가려내기
     static void whoIsWinner(int players, int dealer) throws InterruptedException {
-        int[] winner = new int[players];
-        Thread.sleep(3000);
-        Arrays.fill(winner, dealer);
+        Boolean[] winner = new Boolean[players];
+        Arrays.fill(winner, false);
+        System.out.println("Dealer : all player ended");
+        Thread.sleep(2000);
+        Dealer.drawDealer(players);
+        
+        if (Dealer.cardSum > 21) {
+            Dealer.bust = true;
+        
+        }
 
-        for (int i = 0; i < players; i++) {
+        if (Dealer.bust) {
+            System.out.println("Dealer : Dealer busted");
+            Thread.sleep(1000);
+            System.out.println("Dealer : all players win");
+        
+        } else {
+            System.out.println("Dealer : ");
 
-            if (!Player.bust[i]) {
-                Player.cardSum[i] = 0;
+            for (int i = 0; i < players; i++) {
+                
+                if (Player.cardSum[i] > Dealer.cardSum) {
+                    System.out.print("Player" + (i + 1));
+                    
+                    if (i < (players - 1)) {
+                        System.out.print(", ");
+
+                    }   
+
+                }
 
             }
-            winner[i] -= Player.cardSum[i];
-            winner[i] = Math.abs(winner[i]);
-
-        }
-        int number = winner[0];
-        int finalWinner = 0;
-
-        for (int i = 0; i < players; i++) {
-
-            if (number > winner[i]) {
-                number = winner[i];
-                finalWinner = i;
-
-            }
-        }
-        System.out.println("Dealer : Player" + (finalWinner + 1) + " is winner");
-
-        for (int i = 0; i < players; i++) {
-            System.out.println(winner[i]);
-            
+            System.out.println(" win dealer");
         }
     }
 }

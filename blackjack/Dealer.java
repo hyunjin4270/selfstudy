@@ -3,7 +3,9 @@ package blackjack;
 public class Dealer {
     static int cardSum = 0;
     private static int count = 0;
+    static boolean bust = false;
     static String[] cards = new String[12];
+
     //첫번째 카드
     static void drawFirstCard(int players) throws InterruptedException {
         Thread.sleep(2000);
@@ -24,7 +26,7 @@ public class Dealer {
         int[] card = Card.draw();
         cards[1] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
         count++;
-        System.out.println("Dealer : Card2 : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
+        System.out.println("Dealer Card2 : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
         Thread.sleep(3000);
 
         if (card[1] >= 10) {
@@ -42,6 +44,7 @@ public class Dealer {
                 }
             }
             System.out.println(" successes insurance");
+            System.out.println();
 
         } else {
 
@@ -59,6 +62,7 @@ public class Dealer {
                 }
             }
             System.out.println(" failed insurance");
+            System.out.println();
 
         }
     }

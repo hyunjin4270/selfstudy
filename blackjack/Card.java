@@ -5,6 +5,7 @@ import java.util.Random;
 public class Card {
     private static int[][] card = new int[4][13];
 
+    //카드세팅
     static void shuffle() {
         for (int i = 0; i < 3; i++) {
 
@@ -17,6 +18,7 @@ public class Card {
 
     }
 
+    //무슨종류카드인지 판별
     static String whatCard(int a) {
 
         return switch (a) {
@@ -29,6 +31,8 @@ public class Card {
 
     }
 
+
+    //어느정도 숫자인지 판별
     static String whatCardNum(int a) {
 
         return switch (a) {
@@ -50,11 +54,13 @@ public class Card {
 
     }
 
+    //위 두가지 판별값을 조합
     static String completedCard(String a, String b) {
         return a + " " + b;
 
     }
 
+    //카드 드로우(서브클래스전용)
     static int[] draw() {
         Random random = new Random();
 
@@ -73,6 +79,7 @@ public class Card {
 
     }
 
+    //플레이어 점수계산
     static int sumScore(int players, int card) {
 
         switch (card) {
@@ -115,10 +122,12 @@ public class Card {
     }
 
 
+
     static void howMuchAce(int a) {
 
     }
 
+    //보유 카드출력
     static void showCard(int players) {
         System.out.println();
 
@@ -130,14 +139,22 @@ public class Card {
 
                 if (j < (Player.count[i]) - 1) {
                     System.out.print(", ");
-
+            
                 }
             }
             System.out.println();
-
+            System.out.print("Dealer : ");
+            for (int j = 0; j < Dealer.cards.length; j++) {
+                System.out.println(Dealer.cards[j]);
+                if (!(Dealer.cards[j + 1] == null)) {
+                    System.out.println(", ");
+                } else {
+                    break;
+                }
+            }
         }
         System.out.println();
-        
+
     }
 
 }
