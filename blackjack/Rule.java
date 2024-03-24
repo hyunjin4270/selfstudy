@@ -42,11 +42,11 @@ public class Rule {
                     for (int j = 1; j <= 2; j++) {
                         int[] card = Card.draw();
                         Player.card[i][Player.count[i]] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
-                        Player.cardSum[i] += Card.sumScore(i, card[1]);
-                        Player.count[i]++;
                         System.out.print("Player" + (i + 1));
                         System.out.print(" Card" + j + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
                         System.out.println();
+                        Player.cardSum[i] += Card.sumScore(i, card[1]);
+                        Player.count[i]++;
                         Thread.sleep(1000);
 
                     }
@@ -209,6 +209,9 @@ public class Rule {
         } else if (bestPlayer == Dealer.cardSum) {
             System.out.println("Dealer : Dealer and the player tied the game");
 
+        } else if (bestPlayer < Dealer.cardSum) {
+            System.out.println("Dealer : Dealer win");
+            
         } else {
             System.out.print("Dealer : ");
 

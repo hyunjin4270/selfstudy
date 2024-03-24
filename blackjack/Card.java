@@ -1,6 +1,7 @@
 package blackjack;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Card {
     private static int[][] card = new int[4][13];
@@ -80,7 +81,9 @@ public class Card {
     }
 
     //플레이어 점수계산
-    static int sumScore(int players, int card) {
+    static int sumScore(int players, int card) throws InterruptedException  {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
 
         switch (card) {
             case 1 -> {
@@ -110,13 +113,28 @@ public class Card {
             case 9, 10, 11, 12 -> { return 10;
             }
             default -> {
-                if (Player.cardSum[players] > 10) {
-                    return 1;
+                Boolean system = true;
+                while (system) {
+                    system = false;
+                    Thread.sleep(1000);
+                    System.out.println("Dealer : Choose Ace score (1 or 11)");
+                    System.out.print("Player" + (players + 1) + " : ");
+                    int choose = scanner.nextInt();
+                
+                    if (choose == 1) {
+                        Thread.sleep(1000);
+                        return 1;
 
-                } else {
-                    return 11;
+                    } else if (choose == 11) {
+                        Thread.sleep(1000);
+                        return 11;
 
+                    } else {
+                        System.out.println("Dealer: Wrong enswer");
+                        system = true;
+                    }
                 }
+                return 0;
             }
         }
     }

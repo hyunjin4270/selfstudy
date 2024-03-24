@@ -85,7 +85,6 @@ public class Dealer {
 
     //카드 총합(딜러전용)
     private static int sumScore (int card) {
-
         switch (card) {
             case 1 -> {
                 return 2;
