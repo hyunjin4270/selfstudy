@@ -33,7 +33,8 @@ public class BlackJackMain {
                                     Rule.draw(i);
                                     Rule.isOver(i);
         
-                             } else if (choice.equals("stand")) {
+                                } else if (choice.equals("stand")) {
+                                    System.out.println();
                                     System.out.println("Dealer : Player" + (i + 1) + " choose stand.");
                                     System.out.println();
 

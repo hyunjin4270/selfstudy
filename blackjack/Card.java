@@ -143,17 +143,21 @@ public class Card {
                 }
             }
             System.out.println();
+
+        }
+            System.out.println();
             System.out.print("Dealer : ");
+            
             for (int j = 0; j < Dealer.cards.length; j++) {
                 System.out.println(Dealer.cards[j]);
                 if (!(Dealer.cards[j + 1] == null)) {
                     System.out.println(", ");
                 } else {
+                    System.out.println();
                     break;
                 }
             }
-        }
-        System.out.println();
+        
 
     }
 

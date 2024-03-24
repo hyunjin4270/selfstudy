@@ -13,7 +13,8 @@ public class Dealer {
         cards[count] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
         cardSum += sumScore(card[1]);
         count++;
-        System.out.println("Dealer : Card" + count + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
+        System.out.println("Dealer Card" + count + " : " + Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1])));
+        System.out.println();
 
         if (Card.whatCardNum(card[1]).equals("A")) {
             Rule.Insurance(players);
@@ -82,8 +83,9 @@ public class Dealer {
 
     }
 
-    //점수 더하기
-    private static int sumScore(int card) {
+    //카드 총합(딜러전용)
+    private static int sumScore (int card) {
+
         switch (card) {
             case 1 -> {
                 return 2;
@@ -109,12 +111,17 @@ public class Dealer {
             case 8 -> {
                 return 9;
             }
-            case 10, 11, 12 -> { return 10;
+            case 9, 10, 11, 12 -> { return 10;
             }
             default -> {
-                return 10;
+                if (Dealer.cardSum > 10) {
+                    return 1;
+
+                } else {
+                    return 11;
+
+                }
             }
         }
     }
-
 }

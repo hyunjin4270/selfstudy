@@ -34,6 +34,7 @@ public class Rule {
                 Player.count = new int[playerNum];
                 Arrays.fill(Player.bust, true);
                 System.out.println("Player : " + playerNum + ", Start");
+                System.out.println();
                 Thread.sleep(2000);
 
                 for (int i = 0; i < playerNum; i++) {
@@ -93,6 +94,7 @@ public class Rule {
     //카드 드로우
     static void draw(int a) throws InterruptedException {
         int[] card = Card.draw();
+        System.out.println();
         Player.card[a][Player.count[a]] = Card.completedCard(Card.whatCard(card[0]), Card.whatCardNum(card[1]));
         Player.cardSum[a] += Card.sumScore(a, card[1]);
         detectTie(a);
@@ -229,8 +231,8 @@ public class Rule {
         Thread.sleep(2000);
 
         for (int i = 0; i < players; i++) {
-            System.out.println("Player" + (i + 1) + "Score : ");
-            if (!Player.bust[i]) {
+            System.out.print("Player" + (i + 1) + "Score : ");
+            if (Player.bust[i]) {
                 System.out.println(Player.cardSum[i]);
             } else {
                 System.out.println("Busted");
