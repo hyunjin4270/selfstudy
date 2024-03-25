@@ -3,7 +3,7 @@ package blackjack;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Rule {
+class Rule {
     private static int bestPlayer = 0;
 
     //초기화면

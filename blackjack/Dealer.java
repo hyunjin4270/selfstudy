@@ -1,6 +1,6 @@
 package blackjack;
 
-public class Dealer {
+class Dealer {
     static int cardSum = 0;
     private static int count = 0;
     static boolean bust = false;

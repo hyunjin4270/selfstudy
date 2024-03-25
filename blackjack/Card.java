@@ -3,7 +3,7 @@ package blackjack;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Card {
+class Card {
     private static int[][] card = new int[4][13];
 
     //카드세팅

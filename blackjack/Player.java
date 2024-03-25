@@ -1,6 +1,6 @@
 package blackjack;
 
-public class Player {
+class Player {
     static int[] cardSum;
     static Boolean[] bust;
     static int bustPlayer = 0;

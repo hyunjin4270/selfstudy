@@ -2,7 +2,7 @@ package blackjack;
 
 import java.util.Scanner;
 
-public class BlackJackMain {
+class BlackJackMain {
     public static void main(String[] args) throws InterruptedException {
         @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
