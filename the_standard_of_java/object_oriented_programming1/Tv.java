@@ -1,4 +1,4 @@
-package the_standard_of_java.object_oriented_programming;
+package the_standard_of_java.object_oriented_programming1;
 
 class Tv {
     //Tv의 속성 (멤버변수)

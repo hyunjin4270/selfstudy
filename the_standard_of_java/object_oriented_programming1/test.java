@@ -1,4 +1,4 @@
-package the_standard_of_java;
+package the_standard_of_java.object_oriented_programming1;
 
 public class test {
     public static void main(String[] args) {

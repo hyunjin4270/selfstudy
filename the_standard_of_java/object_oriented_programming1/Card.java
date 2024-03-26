@@ -1,4 +1,4 @@
-package the_standard_of_java.object_oriented_programming;
+package the_standard_of_java.object_oriented_programming1;
 
 class Card {
     String kind;
