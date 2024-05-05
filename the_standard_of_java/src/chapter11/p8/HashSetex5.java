@@ -23,7 +23,7 @@ public class HashSetex5 {
         setB.add("6");
         setB.add("7");
         setB.add("8");
-        System.out.println("B = " + setB);
+        System.out.println("B = " + setB);.
 
         Iterator it = setB.iterator();
         while (it.hasNext()) {
