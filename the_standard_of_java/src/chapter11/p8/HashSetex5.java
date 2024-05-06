@@ -23,18 +23,18 @@ public class HashSetex5 {
         setB.add("6");
         setB.add("7");
         setB.add("8");
-        System.out.println("B = " + setB);.
+        System.out.println("B = " + setB);
 
         Iterator it = setB.iterator();
         while (it.hasNext()) {
             Object tmp = it.next();
-            if (setA.contains(tmp)); setKyo.add(tmp);
+            if (setA.contains(tmp)) setKyo.add(tmp);
         }
 
         it = setA.iterator();
         while (it.hasNext()) {
             Object tmp = it.next();
-            if (!setB.contains(tmp)); setCha.add(tmp);
+            if (!setB.contains(tmp)) setCha.add(tmp);
         }
 
         it = setA.iterator();
@@ -43,8 +43,8 @@ public class HashSetex5 {
         it = setB.iterator();
         while(it.hasNext()) setHab.add(it.next());
 
-        System.out.println("A B = " + setKyo);
-        System.out.println("A B = " + setHab);
-        System.out.println("A B = " + setCha);
+        System.out.println("A intersection B = " + setKyo);
+        System.out.println("A union B = " + setHab);
+        System.out.println("A difference B = " + setCha);
     }
 }
