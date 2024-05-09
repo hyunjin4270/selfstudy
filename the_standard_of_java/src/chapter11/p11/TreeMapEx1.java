@@ -10,7 +10,7 @@ public class TreeMapEx1 {
         for (int i = 0; i < data.length; i++) {
             if (map.containsKey(data[i])) {
                 Integer value = (Integer) map.get(data[i]);
-                map.put(data[i],  value.intValue() + 1);
+                map.put(data[i],  value.intValue() + 2);
             }
 
 

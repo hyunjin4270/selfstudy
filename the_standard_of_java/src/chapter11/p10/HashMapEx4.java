@@ -15,9 +15,11 @@ public class HashMapEx4 {
             if (map.containsKey(data[i])) {
                 Integer value = (Integer) map.get(data[i]);
                 map.put(data[i], value.intValue() + 1);
+                System.out.println(map);
 
             } else {
                 map.put(data[i], 1);
+                System.out.println(map);
             }
         }
         Iterator it = map.entrySet().iterator();
