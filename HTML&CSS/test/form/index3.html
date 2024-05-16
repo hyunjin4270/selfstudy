@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습3</title>
+</head>
+<body>
+    <form>
+        <fieldset style="width: 250px;">
+            <legend>개인 정보 입력</legend>
+            <p>지역선택 (size, multiple속성 추가)</p>
+            <select name="city1" size="5" multiple>
+                <option value="seongnam-si">성남시</option>
+                <option value="seongnam-si">수원시</option>
+                <option value="seongnam-si">용인시</option>
+                <option value="seongnam-si">안양시</option>
+                <option value="seongnam-si">과천시</option>
+                <option value="seongnam-si">하남시</option>
+            </select>
+
+            <p>지역선택 (optgroup 태그 포함)</p>
+            <select name="city1">
+                <optgroup label="서울">
+                    <option>송파구</option>
+                    <option>강남구</option>
+                    <option>서초구</option>
+                    <option>중구</option>
+                </optgroup>
+                <optgroup label="경기도">
+                    <option>성남시</option>
+                    <option>수원시</option>
+                    <option>용인시</option>
+                    <option>안양시</option>
+                </optgroup>
+            </select>
+        </fieldset>
+    </form>
+</body>
+</html>

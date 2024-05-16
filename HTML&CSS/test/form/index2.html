@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습2</title>
+</head>
+
+<body>
+    <form>
+        <fieldset style="width: 250px;">
+            <legend>개인 정보 입력</legend>
+            <p>이름 : <input type="text" name="name"></p>
+            <p>주민번호 : <input type="text" name="security_number" pattern="\d{6}\-\d{7}"
+                    title="123456-1234567 형식으로 입력해주세요"></p>
+            <p>아이디 : <input type="text" name="id"></p>
+            <p>패스워드 : <input type="password" name="password"></p>
+            <p>성별 : 남<input type="radio" name="gender">
+                여<input type="radio" name="gender"></p>
+            <p> 관심사 : 연예<input type="checkbox" name="checkbox1">
+                스포츠<input type="checkbox" name="checkbox2">
+                IT<input type="checkbox" name="checkbox3"></p>
+
+            <input type="submit" value="제출">
+            <input type="reset" value="초기화">
+        </fieldset>
+    </form>
+</body>
+
+</html>
