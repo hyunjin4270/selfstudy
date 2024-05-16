@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <ol>
+                <li><label for="name">납품자명 : </label>
+                    <input type="text" name="name" id="name">
+                </li>
+                <br>
+                <li><label for="mail">email : </label>
+                    <input type="text" name="mail" id="mail" placeholder="answer@naver.com">
+                </li>
+                <br>
+                <li><label for="homepage">홈페이지 : </label>
+                    <input type="text" name="homepage" id="homepage" value="http://">
+                </li>
+                <br>
+                <li><label for="region">지역 : </label>
+                    <select name="region" id="region">
+                        <option value="seoul">서울</option>
+                        <option value="daejeon">대전</option>
+                        <option value="daegu">대구</option>
+                        <option value="busan" selected>부산</option>
+                    </select>
+                </li>
+            </ol>
+        </fieldset>
+
+        <fieldset>
+            <legend>납품 정보</legend>
+            <ul>
+                <li><label for="productName">상품명 : </label>
+                    <input type="text" name="productName" id="productName">
+                </li>
+                <br>
+                <li><label for="productMuch">납품수량 : </label>
+                    <input type="text" name="productMuch" id="productMuch" placeholder="최소 100">
+                </li>
+                <br>
+                <li><label for="productLevel">납품등급 :</label>
+                    <input type="range" name="productLevel" id="productLevel">
+                </li>
+                <br>
+                <li><label for="request">기타사항 : </label>
+                    <textarea name="request" id="request" rows="5" cols="20"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+    <button>send message</button>
+</body>
+
+</html>
