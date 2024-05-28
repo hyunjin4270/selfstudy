@@ -1,11 +1,13 @@
 public class SingleResponsablilty {
-    class Player {
-        void move() {
-            /*동작 구현 기능*/
-        }
-        void sound() {
-            /*모든 사운드 구현*/
-        }
-        void 
+    class PlayerMove {
+        /* 플레이어 동작 구현 */
     }
+    class PlayerSound {
+        /* 플레이어 소리 구현 */
+    }
+    class PlayerAction {
+        /* 플레이어 행동 구현 */
+    }
+        
 }
+
