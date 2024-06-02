@@ -17,7 +17,7 @@ public class OpenClose {
         }
 
         @Override
-        public double calculateArea() {
+        public double calculateArea() { //오버라이드
             return (width * height) / 2;
         }
 
